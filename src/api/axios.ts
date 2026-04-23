@@ -6,6 +6,7 @@ const API = "https://api.garurcs.in/api" ;
 const api = axios.create({
   baseURL: API,
   timeout: 30000, 
+  
 });
 
 api.interceptors.request.use((config) => {
