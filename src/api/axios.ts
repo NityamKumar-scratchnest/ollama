@@ -1,11 +1,11 @@
 
 import axios from "axios";
 
-const API = import.meta.env.VITE_API || "https://api.garurcs.in/api";
+const API = "https://api.garurcs.in/api" ;
 
 const api = axios.create({
   baseURL: API,
-  timeout: 8000,
+  timeout: 30000, 
 });
 
 api.interceptors.request.use((config) => {

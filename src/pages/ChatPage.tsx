@@ -16,7 +16,8 @@ const Chat = () => {
 
     setInput("");
 
-    const res = await api.post("/chat", {
+    try {
+      const res = await api.post("/chat", {
       message: input,
       conversationId,
     });
@@ -25,6 +26,11 @@ const Chat = () => {
 
     const aiMsg = { role: "ai", content: res.data.reply };
     setMessages((prev) => [...prev, aiMsg]);
+    } catch (error) {
+      console.log("error" , error)
+    }
+
+    
   };
 
   return (
